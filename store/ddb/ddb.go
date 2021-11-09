@@ -81,14 +81,14 @@ type Checkpoint struct {
 }
 
 type key struct {
-	streamName string `json:"stream_name"`
-	shardID    string `json:"shard_id"`
+	streamName string `dynamodbav:"stream_name"`
+	shardID    string `dynamodbav:"shard_id"`
 }
 
 type item struct {
-	Namespace      string `json:"namespace"`
-	ShardID        string `json:"shard_id"`
-	SequenceNumber string `json:"sequence_number"`
+	Namespace      string `dynamodbav:"namespace"`
+	ShardID        string `dynamodbav:"shard_id"`
+	SequenceNumber string `dynamodbav:"sequence_number"`
 }
 
 // GetCheckpoint determines if a checkpoint for a particular Shard exists.
